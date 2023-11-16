@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 2px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <h1>Weather Information</h1>
+
+    <form action="/forecast" method="post">
+      <input type="text" id="city" name="city" value="" placeholder="Search for city or place">
+      <button type="submit">Search</button>
+    </form>
+
+    {% if forecast_data_list %}
+      <h2>5-Day Forecast for {{ forecast_data_list[0].name }}</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Description</th>
+            <th>Temperature (°C)</th>
+            <th>Min Temperature (°C)</th>
+            <th>Max Temperature (°C)</th>
+            <th>Pressure (hPa)</th>
+            <th>Humidity (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for forecast in forecast_data_list %}
+            <tr>
+              <td>{{ forecast.datetime }}</td>
+              <td>{{ forecast.description }}</td>
+              <td>{{ forecast.temperature }}</td>
+              <td>{{ forecast.temp_min }}</td>
+              <td>{{ forecast.temp_max }}</td>
+              <td>{{ forecast.pressure }}</td>
+              <td>{{ forecast.humidity }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+</body>
+
+</html>
