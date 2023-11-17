@@ -1,5 +1,17 @@
 # Algorithmic Trading
-Algorithmic Trading is when people use mathematical algorithms and predefined strategies to trade in the stock market. This way of trading is faster, more efficient and more consistent than manual trading. It’s like you’re playing a game where you need to make quick decisions, and a predefined strategy can help you make those decisions faster and better.
+
+Algorithmic Trading is when people use mathematical algorithms and predefined strategies to trade in the stock market. This way of trading is faster, more efficient and more consistent than manual trading.
+
+## Problem Statement
+
+To predict the volatility of intraday stock market considering various parameters.
+
+## Approach
+- Live Data Collection using yfinance Library
+- Pre processing the data for drawing insights in terms of stability of the company
+- Visualizing the stock price of the company right from the date of listing till present graphically
+- Developing a Model using LSTM( Type of Recurrent Neural Network)
+
 # Weather Forecast Web Application
 
 This web application allows users to retrieve weather forecasts for specific cities using the OpenWeatherMap API.
